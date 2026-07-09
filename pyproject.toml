@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ErisPulse-RateLimiter"
+version = "1.0.0"
+description = "ErisPulse message rate limiting module to prevent spam, supports fixed/sliding window, multi-dimensional limiting, and whitelist immunity | ErisPulse 消息速率限制模块，防止刷屏，支持固定/滑动窗口、多维度限流、白名单免疫"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [ { name = "wsu2059q", email = "wsu2059@qq.com" } ]
+
+keywords = [
+    "erispulse",
+    "rate-limiter",
+    "ratelimit",
+    "anti-spam",
+    "bot",
+    "chatbot",
+    "bot-framework",
+    "anti-flood",
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Communications :: Chat",
+]
+
+dependencies = [
+    "ErisPulse>=2.5",
+]
+
+[project.urls]
+"homepage" = "https://github.com/ErisPulse/ErisPulse-RateLimiter"
+"repository" = "https://github.com/ErisPulse/ErisPulse-RateLimiter"
+"issues" = "https://github.com/ErisPulse/ErisPulse-RateLimiter/issues"
+
+[project.entry-points]
+"erispulse.module" = { "RateLimiter" = "RateLimiter:Main" }
+
+[tool.hatch.build.targets.wheel]
+packages = ["RateLimiter"]
